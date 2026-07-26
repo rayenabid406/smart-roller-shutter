@@ -61,22 +61,22 @@ The system enables users to:
 ---
 
 ## System Architecture
-+-------------------------+         MQTT Broker         +-------------------------+
-|                         | --- broker.hivemq.com --- |                         |
-|       Flutter App       |                           |          ESP32          |
-|                         |   publish -> esp32/room1  |                         |
-|     [PUBLISHER]         |   publish -> esp32/room2 ->|      [SUBSCRIBER]       |
-|     [SUBSCRIBER]        |   publish -> esp32/room3  |      [PUBLISHER]        |
-|                         |                           |                         |
-|   subscribe <------------+------ esp32/status --------+   retained: online      |
-+-------------------------+                           +-------------------------+
-|
-+------------v------------+
-|       GPIO Outputs      |
-|  Room 1: A=26  B=27     |
-|  Room 2: A=25  B=33     |
-|  Room 3: A=32  B=14     |
-+-------------------------+
++-------------------+        MQTT Broker        +-------------------+
+|                   | --- broker.hivemq.com --- |                   |
+|    Flutter App    |                           |       ESP32       |
+|                   |   publish -> esp32/room1  |                   |
+|    [PUBLISHER]    |   publish -> esp32/room2 --->|    [SUBSCRIBER]   |
+|    [SUBSCRIBER]   |   publish -> esp32/room3  |    [PUBLISHER]    |
+|                   |                           |                   |
+| subscribe <-------+------ esp32/status -------+  retained: online |
++-------------------+                           +---------+---------+
+                                                          |          
+                                                +---------v---------+
+                                                |    GPIO Outputs   |
+                                                | Room 1: A=26 B=27 |
+                                                | Room 2: A=25 B=33 |
+                                                | Room 3: A=32 B=14 |
+                                                +-------------------+
 ### MQTT Topic Map
 
 | Topic | Direction | Payload |

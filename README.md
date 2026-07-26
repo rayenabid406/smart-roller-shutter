@@ -98,11 +98,8 @@ The system enables users to:
 
 ### User Interface Showcase
 
-<p align="center">
-  <img src="assets/app_dashboard.png" width="320" alt="App Main Dashboard" />
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/app_control.png" width="320" alt="Room Control Page" />
-</p>
+![App Dashboard](assets/app_dashboard.png)
+![App Control Page](assets/app_control.png)
 
 ### Project Structure
 
@@ -240,11 +237,15 @@ Configured as `INPUT_PULLUP`. Detection on HIGH-to-LOW edge transition. A `delay
 
 ### Microcontroller
 
-The target controller used in this system is an ESP32-WROOM-32U board.
+The target controller used in this system is an **ESP32-WROOM-32U** board.
+
+![ESP32 WROOM 32U Board](assets/esp32_board.png)
 
 ### Breadboard Setup & Prototyping
 
 Physical breadboard prototype demonstrating driver wiring, relay/LED indicators, and push button inputs.
+
+![Breadboard Prototyping Setup](assets/hardware_setup.png)
 
 ### Components
 
@@ -271,6 +272,10 @@ Physical breadboard prototype demonstrating driver wiring, relay/LED indicators,
 ## Test Results
 
 ### Verification & Hardware Logs
+
+![PlatformIO Upload Success](assets/platformio_upload.png)
+
+![Serial Terminal MQTT Logs](assets/serial_logs.png)
 
 ### Test Matrix
 
